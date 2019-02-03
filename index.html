@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Catch me if you can</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <div id="log"></div>
+    <div id="send">
+        Enter your nickname: <input type="text" id="nick">
+        <br/><br/>
+        <input type="text" id="text" onkeydown="search(this)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script src="script.js"></script>    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARkS-dsh-7IirtcQg3oSZEHudV6Uw9Iic&callback=initMap">
+    </script>
+</body>
+</html>
