@@ -24,12 +24,11 @@ function initMap() {
         position: uluru,
         map: map,
         animation: google.maps.Animation.DROP,
-        icon: 'owl2.png'
+        icon: 'owl.png'
     });
     getLocalization()
     startWebSocket()
     addKeyboardEvents()
-    console.log("Siema");
 }
 
 function addKeyboardEvents() {
@@ -65,13 +64,13 @@ function poruszMarkerem(ev) {
     marker.setPosition(position)
     ws.send(JSON.stringify(wsData))
 }
+
+
 function startWebSocket() {
     let url = 'ws://91.121.6.192:8010'
     ws = new WebSocket(url)
     ws.addEventListener('open', onWSOpen)
     ws.addEventListener('message', onWSMessage)
-    
-    
 }
 
 function onWSOpen(data) {
@@ -89,9 +88,7 @@ function sendMessage(){
 
 function onWSMessage(e) {
     let log = document.getElementById('log');
-        
 
-        
     msg=(JSON.parse(e.data));
     if(msg.typ=='msg'){
         log.innerHTML+=(msg.tekst)+"<br/>";
